@@ -29,10 +29,19 @@ import axios from 'axios'; // Importer axios pour les requêtes HTTP
 export default {
   setup() {
     const predictions = ref(null); // Utiliser ref pour gérer les données réactives
+    const uploadedImage = ref(null); // Utiliser ref pour stocker l'image en mémoire
 
     async function uploadImage() {
+      const file = uploadedImage.value; // Récupérer le fichier depuis l'input
+
+      if (!file) {
+        return; // Si aucun fichier n'a été sélectionné, sortir de la fonction
+      }
+
+      uploadedImage.value = file; // Stocker le fichier dans uploadedImage
+
       const formData = new FormData();
-      formData.append('image', this.$refs.imageInput.files[0]);
+      formData.append('image', file);
 
       try {
         const response = await axios.post('/api/classification/', formData);
