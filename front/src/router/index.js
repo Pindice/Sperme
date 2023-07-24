@@ -10,10 +10,10 @@ const routes = [
   { path: '/classif', component: ClassificationImage },
 ];
 
-const router = new VueRouter({
+const myRouter = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes,
 });
 
-export default router;
+export default myRouter;
