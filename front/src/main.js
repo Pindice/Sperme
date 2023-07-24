@@ -1,8 +1,9 @@
-import Vue from 'vue';
+import { createApp } from 'vue'; // Importer createApp depuis vue
 import App from './App.vue';
-import myRouter from './router';
+import myRouter from './router'; // Assurez-vous d'utiliser le nom correct ici
 
-new Vue({
-  render: (h) => h(App),
-  myRouter,
-}).$mount('#app');
+const app = createApp(App); // Créer l'instance de l'application Vue
+
+app.use(myRouter); // Utiliser le routeur avec l'application Vue
+
+app.mount('#app'); // Monter l'application Vue sur l'élément #app
