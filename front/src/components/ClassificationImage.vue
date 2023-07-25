@@ -23,35 +23,31 @@
 </template>
 
 <script>
-import { ref } from 'vue'; // Importer ref depuis vue
-import axios from 'axios'; // Importer axios pour les requêtes HTTP
+import { ref } from 'vue';
+import axios from 'axios';
 
 export default {
   setup() {
-    const predictions = ref(null); // Utiliser ref pour gérer les données réactives
-    const uploadedImage = ref(null); // Utiliser ref pour stocker l'image en mémoire
+    const predictions = ref(null);
 
-    async function uploadImage() {
-      const file = uploadedImage.value; // Récupérer le fichier depuis l'input
+    async function uploadImage(event) {
+      const file = event.target.files[0];
 
       if (!file) {
-        return; // Si aucun fichier n'a été sélectionné, sortir de la fonction
+        return;
       }
-
-      uploadedImage.value = file; // Stocker le fichier dans uploadedImage
 
       const formData = new FormData();
       formData.append('image', file);
 
       try {
-        const response = await axios.post('/api/classification/', formData);
-        predictions.value = response.data; // Utiliser predictions.value pour mettre à jour les données réactives
+        const response = await axios.post('/classification/', formData);
+        predictions.value = response.data;
       } catch (error) {
         console.error(error);
       }
     }
 
-    // Retourner les propriétés et méthodes que vous utilisez
     return {
       predictions,
       uploadImage,
