@@ -2,6 +2,9 @@ from django.shortcuts import render
 import requests
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework import viewsets
+from .models import Patient
+from .serializers import PatientSerializer
 
 # Create your views here.
 
@@ -31,3 +34,9 @@ class ImageClassificationView(APIView):
             return Response(scores, status=200)
         else:
             return Response({'error': 'Erreur lors de la classification de l\'image.'}, status=500)
+        
+
+
+class PatientViewSet(viewsets.ModelViewSet):
+    queryset = Patient.objects.all()
+    serializer_class = PatientSerializer
