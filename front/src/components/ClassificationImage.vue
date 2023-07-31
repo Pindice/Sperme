@@ -41,7 +41,7 @@ export default {
       formData.append('image', file);
 
       try {
-        const response = await axios.post('/classification/', formData);
+        const response = await axios.post('api/classification/', formData);
         predictions.value = response.data;
       } catch (error) {
         console.error(error);
