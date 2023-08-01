@@ -51,77 +51,77 @@
     </div>
 </template>
   
-  <script>
-  import { ref } from 'vue';
-  import axios from 'axios';
-  
-  export default {
-    setup() {
-      const formData = ref({
-        season: '',
-        age: null,
-        childish_diseases: '',
-        accident_or_serious_trauma: '',
-        surgical_intervention: '',
-        high_fevers_last_year: '',
-        alcohol_consumption: '',
-        smoking_habit: '',
-        hours_sitting_per_day: null,
-        diagnosis: '',
-      });
-  
-      async function submitForm() {
-        try {
-          await axios.post('/api/patients/', formData.value);
-          alert('Le formulaire a été soumis avec succès !');
-        } catch (error) {
-          console.error(error);
-          alert("Une erreur s'est produite lors de la soumission du formulaire.");
-        }
+<script>
+import { ref } from 'vue';
+import axios from 'axios';
+
+export default {
+  setup() {
+    const formData = ref({
+      season: '',
+      age: null,
+      childish_diseases: '',
+      accident_or_serious_trauma: '',
+      surgical_intervention: '',
+      high_fevers_last_year: '',
+      alcohol_consumption: '',
+      smoking_habit: '',
+      hours_sitting_per_day: null,
+      diagnosis: '',
+    });
+
+    async function submitForm() {
+      try {
+        await axios.post('/api/patients/', formData.value);
+        alert('Le formulaire a été soumis avec succès !');
+      } catch (error) {
+        console.error(error);
+        alert("Une erreur s'est produite lors de la soumission du formulaire.");
       }
-  
-      const seasonChoices = {
-        spring: 'Spring',
-        summer: 'Summer',
-        autumn: 'Autumn',
-        winter: 'Winter',
-      };
-  
-      const yesNoChoices = {
-        yes: 'Yes',
-        no: 'No',
-      };
-  
-      const highFeversChoices = {
-        more_than_3_months_ago: 'More than 3 months ago',
-        less_than_3_months_ago: 'Less than 3 months ago',
-        no: 'No',
-      };
-  
-      const alcoholChoices = {
-        once_a_week: 'Once a week',
-        hardly_ever_or_never: 'Hardly ever or never',
-        several_times_a_week: 'Several times a week',
-        several_times_a_day: 'Several times a day',
-        every_day: 'Every day',
-      };
-  
-      const smokingHabitChoices = {
-        occasional: 'Occasional',
-        daily: 'Daily',
-        never: 'Never',
-      };
-  
-      return {
-        formData,
-        seasonChoices,
-        yesNoChoices,
-        highFeversChoices,
-        alcoholChoices,
-        smokingHabitChoices,
-        submitForm,
-      };
-    },
-  };
-  </script>
+    }
+
+    const seasonChoices = {
+      spring: 'Spring',
+      summer: 'Summer',
+      autumn: 'Autumn',
+      winter: 'Winter',
+    };
+
+    const yesNoChoices = {
+      yes: 'Yes',
+      no: 'No',
+    };
+
+    const highFeversChoices = {
+      more_than_3_months_ago: 'More than 3 months ago',
+      less_than_3_months_ago: 'Less than 3 months ago',
+      no: 'No',
+    };
+
+    const alcoholChoices = {
+      once_a_week: 'Once a week',
+      hardly_ever_or_never: 'Hardly ever or never',
+      several_times_a_week: 'Several times a week',
+      several_times_a_day: 'Several times a day',
+      every_day: 'Every day',
+    };
+
+    const smokingHabitChoices = {
+      occasional: 'Occasional',
+      daily: 'Daily',
+      never: 'Never',
+    };
+
+    return {
+      formData,
+      seasonChoices,
+      yesNoChoices,
+      highFeversChoices,
+      alcoholChoices,
+      smokingHabitChoices,
+      submitForm,
+    };
+  },
+};
+</script>
   
