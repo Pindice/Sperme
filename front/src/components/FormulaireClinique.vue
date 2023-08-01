@@ -81,35 +81,35 @@ export default {
     }
 
     const seasonChoices = {
-      spring: 'Spring',
-      summer: 'Summer',
-      autumn: 'Autumn',
-      winter: 'Winter',
+      'Spring' : 'spring',
+      'Summer' : 'summer',
+      'Autumn' : 'autumn',
+      'Winter' : 'winter',
     };
 
     const yesNoChoices = {
-      yes: 'Yes',
-      no: 'No',
+      'Yes' : 'yes',
+      'No' : 'no',
     };
 
     const highFeversChoices = {
-      more_than_3_months_ago: 'More than 3 months ago',
-      less_than_3_months_ago: 'Less than 3 months ago',
-      no: 'No',
+      'More than 3 months ago' : 'more_than_3_months_ago',
+      'Less than 3 months ago': 'less_than_3_months_ago',
+      'No' : 'no',
     };
 
     const alcoholChoices = {
-      once_a_week: 'Once a week',
-      hardly_ever_or_never: 'Hardly ever or never',
-      several_times_a_week: 'Several times a week',
-      several_times_a_day: 'Several times a day',
-      every_day: 'Every day',
+      'Once a week': 'once_a_week',
+      'Hardly ever or never': 'hardly_ever_or_never',
+      'Several times a week': 'several_times_a_week',
+      'Several times a day': 'several_times_a_day',
+      'Every day': 'every_day',
     };
 
     const smokingHabitChoices = {
-      occasional: 'Occasional',
-      daily: 'Daily',
-      never: 'Never',
+      'Occasional': 'occasional',
+      'Daily': 'daily',
+      'Never': 'never',
     };
 
     return {
