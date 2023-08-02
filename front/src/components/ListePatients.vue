@@ -1,7 +1,7 @@
 <template>
     <div>
       <h1>Liste des patients</h1>
-      <table>
+      <table class="table table-striped table-bordered">
         <thead>
           <tr>
             <th>ID</th>

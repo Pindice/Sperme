@@ -1,51 +1,72 @@
 <template>
-    <div>
+    <div class="container">
         <h1>Formulaire Clinique</h1>
         <form @submit.prevent="submitForm">
+          <div class="form-group">
             <label for="season">Season:</label>
             <select v-model="formData.season" id="season">
                 <option v-for="(value, label) in seasonChoices" :value="value" :key="value">{{ label }}</option>
             </select>
+          </div>
 
+          <div class="form-group">
             <label for="age">Age:</label>
             <input v-model.number="formData.age" type="number" id="age" min="0"/>
+          </div>
 
+          <div class="form-group">
             <label for="childish_diseases">Childish Diseases:</label>
             <select v-model="formData.childish_diseases" id="childish_diseases">
                 <option v-for="(value, label) in yesNoChoices" :value="value" :key="value">{{ label }}</option>
             </select>
+          </div>
 
+          <div class="form-group">
             <label for="accident_or_serious_trauma">Accident or serious trauma:</label>
             <select v-model="formData.accident_or_serious_trauma" id="accident_or_serious_trauma">
                 <option v-for="(value, label) in yesNoChoices" :value="value" :key="value">{{ label }}</option>
             </select>
+          </div>
 
+          <div class="form-group">
             <label for="surgical_intervention">Surgical intervention:</label>
             <select v-model="formData.surgical_intervention" id="surgical_intervention">
                 <option v-for="(value, label) in yesNoChoices" :value="value" :key="value">{{ label }}</option>
             </select>
+          </div>
 
+          <div class="form-group">
             <label for="high_fevers_last_year">High fevers last year:</label>
             <select v-model="formData.high_fevers_last_year" id="high_fevers_last_year">
                 <option v-for="(value, label) in highFeversChoices" :value="value" :key="value">{{ label }}</option>
             </select>
+          </div>
 
+          <div class="form-group">
             <label for="alcohol_consumption">Alcohol consumption:</label>
             <select v-model="formData.alcohol_consumption" id="alcohol_consumption">
                 <option v-for="(value, label) in alcoholChoices" :value="value" :key="value">{{ label }}</option>
             </select>
+          </div>
 
+          <div class="form-group">
             <label for="smoking_habit">Smoking habit:</label>
             <select v-model="formData.smoking_habit" id="smoking_habit">
                 <option v-for="(value, label) in smokingHabitChoices" :value="value" :key="value">{{ label }}</option>
             </select>
+          </div>
 
+          <div class="form-group">
             <label for="hours_sitting_per_day">Hours sitting per day:</label>
             <input v-model.number="formData.hours_sitting_per_day" type="number" id="hours_sitting_per_day" min="0" max="24"/>
+          </div>
 
+          <div class="form-group">
             <label for="diagnosis">Diagnosis:</label>
             <input v-model="formData.diagnosis" type="text" id="diagnosis" />
+          </div>
 
+          <br>
             <button type="submit">Soumettre</button>
         </form>
     </div>
