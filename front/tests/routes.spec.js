@@ -1,18 +1,20 @@
 import { mount } from '@vue/test-utils';
 import { createRouter, createWebHistory } from 'vue-router';
-import { createApp } from 'vue'; // Importez createApp depuis Vue pour créer votre application Vue
-import App from 'front/src/App.vue'; // Remplacez "App.vue" par le composant qui englobe vos routes
-import routes from 'front/src/router/index.js'; // Chemin vers votre fichier "index.js" avec les routes
+import { createApp } from 'vue';
+import App from '../src/App.vue';
+import { routes } from '../src/router/index.js'; // Destructure the routes array from the imported object
+
+console.log('routes:', routes); // Check the value of the routes variable
 
 describe('Testing Vue Router', () => {
   it('renders MainPage component when navigating to /', async () => {
     const router = createRouter({
       history: createWebHistory(process.env.BASE_URL),
-      routes,
+      routes, // Use the destructured routes array here
     });
 
     const app = createApp(App);
-    app.use(router); // Utilisez le router dans l'application Vue
+    app.use(router);
 
     const wrapper = mount(app);
     await router.push('/');

@@ -1,8 +1,11 @@
+// jest.config.js
 module.exports = {
-    testEnvironment: 'jest-environment-jsdom',
-    transform: {
-      '^.+\\.js$': 'babel-jest',
-      '^.+\\.vue$': '@vue/vue3-jest', // ou 'vue-jest' si vous utilisez Vue 2.x
-    },
-  };
-  
+  testEnvironment: 'jsdom',
+  testEnvironmentOptions: {
+    customExportConditions: ["node", "node-addons"],
+ },
+  transform: {
+    '^.+\\.vue$': '@vue/vue3-jest',
+    '^.+\\.js$': 'babel-jest',
+  },
+};
