@@ -1,0 +1,20 @@
+# Utiliser une image de base avec Node.js préinstallé
+FROM node:18.15.0
+
+# Définir le répertoire de travail dans le conteneur
+WORKDIR /app
+
+# Copier les fichiers requis dans le conteneur
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+
+# Compiler l'application Vue.js pour la production
+RUN npm run build
+
+# Exposer le port utilisé par Vue.js (par exemple, le port 8080)
+EXPOSE 8080
+
+# Démarrer le serveur Vue.js
+CMD ["npm", "run", "serve"]

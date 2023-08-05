@@ -1,0 +1,17 @@
+# Utiliser une image de base avec Python et pip préinstallés
+FROM python:3.10
+
+# Définir le répertoire de travail dans le conteneur
+WORKDIR /app
+
+# Copier les fichiers requis dans le conteneur
+COPY requirements.txt /app/
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . /app/
+
+# Exposer le port utilisé par Django (par exemple, le port 8000)
+EXPOSE 8000
+
+# Démarrer le serveur Django
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

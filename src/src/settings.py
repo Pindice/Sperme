@@ -83,8 +83,8 @@ DATABASES = {
         'NAME': 'clinique',
         'USER': 'postgres',
         'PASSWORD': '0000',
-        'HOST': 'localhost',  # Or your PostgreSQL server's IP address
-        'PORT': '5432',      # Default PostgreSQL port
+        'HOST': 'db',  # Or your PostgreSQL server's IP address
+        'PORT': '',      # Default PostgreSQL port
     }
 }
 
