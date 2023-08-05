@@ -18,5 +18,5 @@ services:
     image: postgres:latest
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 0000
+      POSTGRES_PASSWORD: '0000'
       POSTGRES_DB: clinique
