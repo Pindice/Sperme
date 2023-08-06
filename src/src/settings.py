@@ -80,11 +80,14 @@ WSGI_APPLICATION = 'src.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'clinique',
+        'NAME': 'postgres',
         'USER': 'postgres',
-        'PASSWORD': '0000',
-        'HOST': 'db',  # Or your PostgreSQL server's IP address
-        'PORT': '',      # Default PostgreSQL port
+        'PASSWORD': 'azserv974!',
+        'HOST': 'hushemserv.postgres.database.azure.com',  # Or your PostgreSQL server's IP address
+        'PORT': '5432',      # Default PostgreSQL port
+        'OPTIONS': {
+            'sslmode': 'require',  # Activez SSL pour une connexion sécurisée (recommandé)
+        }
     }
 }
 
