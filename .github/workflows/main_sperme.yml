@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'Sperme'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D28AD03757404EDBB390B81A89D9D5EB }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A0256A92E2134C3C85A7F853EC62F2DD }}
           package: .
